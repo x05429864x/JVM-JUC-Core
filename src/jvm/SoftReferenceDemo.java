@@ -4,8 +4,8 @@ import java.lang.ref.SoftReference;
 
 public class SoftReferenceDemo {
     public static void main(String[] args) {
-        softRef_Memory_Enough();
-        System.out.println("Not Enough");
+//        softRef_Memory_Enough();
+//        System.out.println("Not Enough");
         softRef_Memory_NotEnough();
     }
 
@@ -21,6 +21,10 @@ public class SoftReferenceDemo {
         System.out.println(softReference.get());
     }
 
+    /**
+     * JVM配置，故意产生大对象并配置小的内存,让他内存不够用了导致OOM，看软引用的回收情况
+     * -Xms5m -Xmx5m -XX:+PrintGCDetails
+     */
     private static void softRef_Memory_NotEnough() {
         Object o1 = new Object();
         SoftReference<Object> softReference = new SoftReference<>(o1);
