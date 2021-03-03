@@ -13,6 +13,8 @@ public class HelloGC {
         System.out.println("****HelloGC");
         System.out.println(1111);
         System.out.println("master");
+        System.out.println("xqr");
+
 //        byte[] ints = new byte[1024 * 1024 * 50];
         Thread.sleep(Integer.MAX_VALUE);
     }
